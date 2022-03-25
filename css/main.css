@@ -379,7 +379,7 @@ a.btn1 {
   z-index: 200;
   text-align: center;
   overflow: auto;
-  transition: all 1s;
+  transition: all 0.5s;
 }
 .btn-hide-sidebar {
   position: absolute;
@@ -465,15 +465,48 @@ a.btn1 {
   background-color: #d41b22;
   border: 3px solid #fff;
 }
-.caption1-slide1 {
-  animation: --animate;
+.carousel-inner {
+  height: 100vh;
+}
+.rolldown {
+  animation: animate 1s;
 }
 @keyframes animate {
-  0% {
-    right: 100%;
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
   }
-  100% {
-    right: 0;
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.fadeInDown {
+  animation: fadeinDown 1s;
+}
+@keyframes fadeinDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.zoomIn {
+  animation: zoomIn 1s;
+}
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
   }
 }
 /* Welcome */
@@ -488,7 +521,7 @@ a.btn1 {
   padding-bottom: 30px;
 }
 .welcome-car {
-  bottom: 20% !important;
+  bottom: 30% !important;
 }
 /* Intro */
 /* ///////////////////////////////////////// */
@@ -581,7 +614,7 @@ a.btn1 {
   margin-top: 25px;
 }
 .media-h {
-  bottom: -6%;
+  bottom: 5%;
 }
 .w-100 {
   width: 100% !important;
@@ -610,7 +643,7 @@ a.btn1 {
   width: 100%;
 }
 .events {
-  margin-bottom: 9rem;
+  margin-bottom: 9px;
 }
 /* Booling */
 .selection-1,
@@ -894,8 +927,9 @@ button.btn3 {
   justify-content: center;
   align-items: center;
 }
-.btn-back-to-top a {
+.btn-back-to-top i {
   font-size: 25px;
+  color: #fff;
 }
 .btn-back-to-top {
   width: 40px;

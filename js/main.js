@@ -62,6 +62,20 @@ $(".selection-1").select2({
 });
 
 
+
+
+// side bar
+/////////////////////////////////////////////////////
+let sidebar = document.querySelector('.sidebar');
+
+document.querySelector('#menubtn').onclick = () => {
+    sidebar.classList.toggle('cart_active');
+}
+document.querySelector('#sidebar-close').onclick = () => {
+    sidebar.classList.remove('cart_active');
+}
+
+
 // Back to top
 var windowH = $(window).height() / 2;
 $(window).on('scroll', function () {
@@ -75,15 +89,3 @@ $(window).on('scroll', function () {
 $('#backToTop').on("click", function () {
     $('html,body').animate({scrollTop:0},300)
 })
-
-
-// side bar
-/////////////////////////////////////////////////////
-let sidebar = document.querySelector('.sidebar');
-
-document.querySelector('#menubtn').onclick = () => {
-    sidebar.classList.toggle('cart_active');
-}
-document.querySelector('#sidebar-close').onclick = () => {
-    sidebar.classList.remove('cart_active');
-}
