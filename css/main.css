@@ -1248,6 +1248,9 @@ button.btn3 {
   background-color: #000;
   color: #fff;
 }
+.img-not-active {
+  display: none;
+}
 /* About */
 .section-strory {
   background-image: url(../images/icons/pattern2.png);

@@ -89,3 +89,38 @@ $(window).on('scroll', function () {
 $('#backToTop').on("click", function () {
     $('html,body').animate({scrollTop:0},300)
 })
+   
+
+///////////////////////////////////
+    // Gallary ///
+///////////////////////////////////////
+
+
+const gallaryLebelBtns = document.querySelector('.wrap-label-gallary');
+const gallaryLebelBtn = document.querySelectorAll('.label-gallary');
+const gallaryImg = document.querySelectorAll('.item-gallery');
+
+gallaryLebelBtns.addEventListener('click', (e) => {
+    const selectdBtn = e.target;
+    console.log(selectdBtn);
+    gallaryLebelBtn.forEach((curElem) => {
+        curElem.classList.remove('is-active');
+    })
+
+    selectdBtn.classList.toggle('is-active')
+
+
+
+//    find the num//
+    const btnNum = selectdBtn.dataset.btnNum;
+    console.log(btnNum);
+    const imgActive = document.querySelectorAll(`.p-btn--${btnNum}`);
+
+    gallaryImg.forEach((curElem) => {
+        curElem.classList.add('img-not-active')
+    })
+    imgActive.forEach((curElem) => {
+        curElem.classList.remove('img-not-active')
+    })
+})
+
